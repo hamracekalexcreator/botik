@@ -5,8 +5,22 @@
 - `/alert BTC 50000` — nastaví upozornenie, keď cena dosiahne 50 000 $
 - `/myalerts` — zoznam tvojich aktívnych alertov
 - `/removealert 3` — zmaže alert s daným ID
+- `/analyzechart` — priložíš obrázok chartu, AI popíše viditeľné technické vzory (trend, support/resistance, formácie) — **nie je to predpoveď ceny**, len opis toho, čo je na obrázku vidieť
 
 Bot kontroluje ceny každú minútu (cez CoinGecko API, zadarmo, bez potreby API kľúča).
+
+---
+
+## Krok 0: Nastavenie AI analýzy chartov (voliteľné, platené podľa použitia)
+
+Ak chceš používať `/analyzechart`, potrebuješ Anthropic API kľúč:
+
+1. Choď na https://console.anthropic.com a založ si účet
+2. V sekcii **API Keys** vytvor nový kľúč
+3. Dobi si kredit (stačí pár dolárov na start — jedna analýza obrázka stojí rádovo centy)
+4. Skopírovaný kľúč pridáš do Railway Variables ako `ANTHROPIC_API_KEY` (rovnako ako `DISCORD_TOKEN`, pozri Krok 4 nižšie)
+
+Ak tento kľúč nenastavíš, zvyšok bota (cenové alerty) funguje úplne normálne — len `/analyzechart` vypíše upozornenie, že chýba nastavenie.
 
 ---
 
